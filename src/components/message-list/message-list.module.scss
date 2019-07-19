@@ -3,14 +3,19 @@
 
 .list {
   padding: 2rem 0;
+  height: 40vh;
+  min-height: 30rem;
+  overflow-y: scroll;
 }
 
 .listItem {
   font-size: $font-size-large;
   color: #fff;
   margin-bottom: .5rem;
-  display: flex;
-  align-items: center;
+  width: 100%;
+  word-break: break-all;
+  position: relative;
+  padding-left: 3rem;
 
   &::before {
     content: '>';
@@ -18,5 +23,7 @@
     height: 3rem;
     @include flexCenter;
     color: $color-grey-light-4;
+    position: absolute;
+    left: 0;
   }
 }

@@ -13,7 +13,7 @@ const ChatSection = () => {
 
 	const addMessage = message => {
 		setMessages(messages => {
-			return [...messages, message];
+			return [message, ...messages];
 		});
 	};
 
@@ -30,7 +30,7 @@ const ChatSection = () => {
 		<section className={style.container}>
 			<h2 className={style.title}>CHAT ROOM</h2>
 			<MessageForm addMessage={addMessage} />
-			{messages.length > 0 && <MessageList messages={messages} />}
+			<MessageList messages={messages} />
 		</section>
 	);
 };

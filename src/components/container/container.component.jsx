@@ -10,7 +10,7 @@ const Containerr = () => {
 
 	return (
 		<div className={style.container}>
-			<h1 className={style.title}>Peer to Peer Chat Demo</h1>
+			<h1 className={style.title}>Peer to Peer Video Chat Demo</h1>
 			{options ? (
 				<ConnectionDisplay options={options} />
 			) : (

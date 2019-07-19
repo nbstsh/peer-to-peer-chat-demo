@@ -32,7 +32,7 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://nbstsh.github.io/peer-to-peer-chat-demo",
+  "homepage": "https://nbstsh.github.io/peer-to-peer-chat-demo/",
   "devDependencies": {
     "gh-pages": "^2.0.1"
   }
