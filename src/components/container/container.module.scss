@@ -1,0 +1,7 @@
+@import '../../styles/base/mixins';
+@import '../../styles/base/variables';
+
+.container {
+  @include containerStyle;
+  margin-top: 5rem;
+}
