@@ -1,120 +1,27 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
-import * as Peer from 'simple-peer';
+import style from './connection-display.module.scss';
 
-const initiator = window.location.hash === '#init';
-console.log({ initiator });
-const peer = new Peer({ initiator });
+import { PeerProvider } from 'contexts/peer-context';
 
-const ConnectionDisplay = () => {
-	const [yourId, setYourId] = useState('');
-	const [otherId, setOtherId] = useState('');
-	const [connectionStatus, setConnectionStatus] = useState('No connection.');
-	const otherIdInput = useFormInut('');
-	const messageInput = useFormInut('');
-	const [receivedMessages, setReceivedMessages] = useState([]);
+import ConnectionStatus from '../connection-status/connection-status.component';
+import UserIdDisplay from '../user-id-display/user-id-display.component';
+import PeerIdSection from '../peer-id-section/peer-id-section.component';
+import ChatSection from '../chat-section/chat-section.component';
 
-	useEffect(() => {
-		peer.on('signal', data => {
-			if ('type' in data) {
-				setYourId(data);
-			}
-		});
-	}, []);
-
-	useEffect(() => {
-		peer.on('data', data => {
-			console.log({ receivedData: data });
-			console.log(typeof data);
-			const message = new TextDecoder('utf-8').decode(data);
-			setReceivedMessages(receivedMessages => {
-				return [...receivedMessages, message];
-			});
-		});
-	}, []);
-
-	useEffect(() => {
-		peer.on('connect', () => {
-			setConnectionStatus('Connected!!!');
-		});
-	}, []);
-
-	const onOtherIdSubmit = e => {
-		e.preventDefault();
-
-		const trimedValue = otherIdInput.value.trim();
-		if (!trimedValue) return;
-
-		const otherId = JSON.parse(trimedValue);
-		setOtherId(otherId);
-		console.log({ otherId });
-		peer.signal(trimedValue);
-	};
-
-	const onMessageSubmit = e => {
-		e.preventDefault();
-
-		const { value: message } = messageInput;
-		console.log(message);
-		console.log(typeof message);
-		peer.send(message);
-		messageInput.setValue('');
-	};
+const ConnectionDisplay = ({ options }) => {
+	const [isConnected, setIsConnected] = useState();
 
 	return (
-		<div>
-			<p>connection display </p>
-
-			<secttion>
-				<h2>Your ID</h2>
-				<p>{JSON.stringify(yourId)}</p>
-			</secttion>
-
-			<section>
-				<h2>Peer ID</h2>
-				{otherId ? (
-					<p>{JSON.stringify(otherId)}</p>
-				) : (
-					<form onSubmit={onOtherIdSubmit}>
-						<textarea {...otherIdInput} />
-						<button>save</button>
-					</form>
-				)}
-			</section>
-
-			<section>
-				<h3>connection status</h3>
-				<p>{connectionStatus}</p>
-			</section>
-
-			<section>
-				<form onSubmit={onMessageSubmit}>
-					<input {...messageInput} />
-					<button>send</button>
-				</form>
-			</section>
-
-			<section>
-				{receivedMessages.map((message, i) => {
-					return <li key={i}>{message}</li>;
-				})}
-			</section>
-		</div>
+		<PeerProvider options={options}>
+			<div className={style.container}>
+				<ConnectionStatus setIsConnected={setIsConnected} />
+				{isConnected && <ChatSection />}
+				<UserIdDisplay />
+				<PeerIdSection />
+			</div>
+		</PeerProvider>
 	);
-};
-
-const useFormInut = initialValue => {
-	const [value, setValue] = useState(initialValue);
-
-	const onChange = e => {
-		setValue(e.target.value);
-	};
-
-	return {
-		value,
-		setValue,
-		onChange
-	};
 };
 
 export default ConnectionDisplay;

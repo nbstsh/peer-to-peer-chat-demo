@@ -1,0 +1,24 @@
+@import '../../styles/base/mixins';
+@import '../../styles/base/variables';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 80vh;
+
+  &>* {
+    margin-bottom: 3rem;
+  }
+}
+
+.title {
+  text-transform: uppercase;
+  color: $color-grey-dark-3;
+}
+
+.button {
+  @include buttonStyle;
+  padding: 3rem 0;
+  font-size: 3rem;
+}

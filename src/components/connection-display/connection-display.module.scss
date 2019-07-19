@@ -1,0 +1,11 @@
+@import '../../styles/base/mixins';
+@import '../../styles/base/variables';
+
+
+.container {
+  padding: 5rem 0;
+
+  &>*:not(:last-child) {
+    margin-bottom: 5rem;
+  }
+}

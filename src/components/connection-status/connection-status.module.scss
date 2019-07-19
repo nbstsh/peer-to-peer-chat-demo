@@ -1,0 +1,17 @@
+@import '../../styles/base/mixins';
+@import '../../styles/base/variables';
+
+.status {
+  text-align: center;
+  font-size: $font-size-large;
+  font-weight: bold;
+  padding: 1rem 2rem;
+  border-radius: 3px;
+
+  background-color: $color-grey-dark-2;
+  color: #fff;
+
+  background-color: #fff;
+  color: $color-grey-dark-2;
+  border: 1px solid;
+}

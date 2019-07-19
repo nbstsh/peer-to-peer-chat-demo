@@ -3,5 +3,11 @@
 
 .container {
   @include containerStyle;
-  margin-top: 5rem;
+  min-height: calc(100vh - #{$container-margin-vertical * 2});
+}
+
+.title {
+  color: $color-grey-dark-2;
+  font-size: 4rem;
+  text-transform: uppercase;
 }

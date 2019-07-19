@@ -1,0 +1,33 @@
+@import '../../styles/base/mixins';
+@import '../../styles/base/variables';
+
+.form {
+  @include flexCenter;
+  background-color: $color-grey-light-1;
+  padding: 1.5rem 3rem;
+  border-radius: 5px;
+  flex-direction: column;
+
+  &>*:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+}
+
+.heading {
+  align-self: flex-start;
+  color: $color-grey-dark-2;
+}
+
+.textarea {
+  width: 100%;
+  height: 10rem;
+  border-radius: 5px;
+  border: 1px solid $color-grey-light-4;
+  outline-color: $color-grey-dark-4;
+  padding: 1rem;
+}
+
+.button {
+  @include buttonStyle;
+  align-self: flex-end;
+}

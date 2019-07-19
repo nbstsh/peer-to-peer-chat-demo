@@ -40,30 +40,7 @@ $breakpoint arguement choices:
   }
 }
 
-/* common style */
-
-@mixin containerStyle {
-  max-width: $container-max-width;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
 /* common helper */
-
-@mixin clearfix {
-  &::after {
-    content: '';
-    display: table;
-    clear: both;
-  }
-}
-
-@mixin absCenter {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
 
 @mixin flexCenter {
   display: flex;
@@ -71,33 +48,32 @@ $breakpoint arguement choices:
   align-items: center;
 }
 
-@mixin linkStyle($unset: false) {
+/* common style */
 
-  // default link style
-  &,
-  &:link,
-  &:visited {
-    color: $color-primary;
-    border-bottom: 1px solid;
+@mixin containerStyle {
+  max-width: $container-max-width;
+  margin: $container-margin-vertical auto;
+  padding: 0 $container-padding-horizontal;
+}
 
-    &:hover {
-      color: $color-primary-dark;
-    }
+
+@mixin buttonStyle {
+  padding: .75rem 1.5rem;
+  border: 1px solid currentColor;
+  color: $color-grey-dark-2;
+  background-color: #fff;
+  font-size: $font-size-default;
+  outline: none;
+  cursor: pointer;
+  transition: all .2s;
+
+  &:hover {
+    transform: translateY(-.3rem);
+    box-shadow: 0 .3rem .3rem rgba(#000, .3);
   }
 
-  // custom link style if @content is given
-  &,
-  &:link,
-  &:visited {
-    @if $unset {
-      color: unset;
-      border-bottom: unset;
-
-      &:hover {
-        color: unset;
-      }
-    }
-
-    @content;
+  &:active {
+    transform: translateY(0);
+    box-shadow: none;
   }
 }

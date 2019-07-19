@@ -1,0 +1,16 @@
+@import '../../styles/base/mixins';
+@import '../../styles/base/variables';
+
+
+.container {
+  background-color: $color-grey-dark-2;
+  padding: 3rem 3rem;
+  border-radius: 5px;
+  box-shadow: 0 1rem 1rem rgba(#000, .3);
+}
+
+.title {
+  color: $color-grey-light-3;
+  text-align: center;
+  padding-bottom: 1.5rem;
+}

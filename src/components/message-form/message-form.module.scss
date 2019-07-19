@@ -1,0 +1,22 @@
+@import '../../styles/base/mixins';
+@import '../../styles/base/variables';
+
+.form {
+  display: flex;
+  width: 100%;
+  padding-bottom: 2rem;
+}
+
+.input {
+  outline: none;
+  font-size: $font-size-default;
+  padding: .75rem 1.5rem;
+  flex-grow: 1;
+  background-color: $color-grey-light-1;
+}
+
+.button {
+  @include buttonStyle;
+  margin-left: 1rem;
+  background-color: $color-grey-light-1;
+}

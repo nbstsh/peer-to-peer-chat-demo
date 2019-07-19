@@ -5,13 +5,6 @@ $bp-tabLand: 75em; //1200px
 $bp-bigDesktop: 112.5em; //1800
 
 /* Colors */
-$color-primary: #55c57a;
-$color-primary-light: #7ed56f;
-$color-primary-dark: #28b485;
-
-$color-secondary: rgb(16, 16, 100);
-
-
 $color-grey-dark-1: #1a1a1a;
 $color-grey-dark-2: #36363d;
 $color-grey-dark-3: #696974;
@@ -29,5 +22,6 @@ $font-size-default: 1.6rem;
 $font-size-large: 2rem;
 
 /* Layout */
+$container-margin-vertical: 5rem;
 $container-padding-horizontal: 3rem;
 $container-max-width: 80rem;
