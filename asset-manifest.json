@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/peer-to-peer-chat-demo/static/css/main.7d5fda18.chunk.css",
+    "main.js": "/peer-to-peer-chat-demo/static/js/main.548201ac.chunk.js",
+    "main.js.map": "/peer-to-peer-chat-demo/static/js/main.548201ac.chunk.js.map",
+    "runtime~main.js": "/peer-to-peer-chat-demo/static/js/runtime~main.d7614a1f.js",
+    "runtime~main.js.map": "/peer-to-peer-chat-demo/static/js/runtime~main.d7614a1f.js.map",
+    "static/js/2.c6d690d0.chunk.js": "/peer-to-peer-chat-demo/static/js/2.c6d690d0.chunk.js",
+    "static/js/2.c6d690d0.chunk.js.map": "/peer-to-peer-chat-demo/static/js/2.c6d690d0.chunk.js.map",
+    "index.html": "/peer-to-peer-chat-demo/index.html",
+    "precache-manifest.0ce5acc1a9d38052e8eb3c4fbf78ae10.js": "/peer-to-peer-chat-demo/precache-manifest.0ce5acc1a9d38052e8eb3c4fbf78ae10.js",
+    "service-worker.js": "/peer-to-peer-chat-demo/service-worker.js",
+    "static/css/main.7d5fda18.chunk.css.map": "/peer-to-peer-chat-demo/static/css/main.7d5fda18.chunk.css.map"
+  }
+}
