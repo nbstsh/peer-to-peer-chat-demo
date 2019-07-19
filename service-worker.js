@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/peer-to-peer-chat-demo/precache-manifest.0ce5acc1a9d38052e8eb3c4fbf78ae10.js"
+  "/peer-to-peer-chat-demo/precache-manifest.d29511e134c1779f5b10652890702c7c.js"
 );
 
 self.addEventListener('message', (event) => {
